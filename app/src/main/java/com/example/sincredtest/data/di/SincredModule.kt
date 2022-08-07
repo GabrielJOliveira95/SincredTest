@@ -6,7 +6,7 @@ import com.example.sincredtest.data.repository.SincredRepository
 import com.example.sincredtest.data.repository.SincredRepositoryImpl
 import com.example.sincredtest.data.retrofit.Retrofit.createRetrofit
 import com.example.sincredtest.data.service.SincredService
-import com.example.sincredtest.ui.SincredViewModel
+import com.example.sincredtest.ui.main.SincredViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 

@@ -1,4 +1,4 @@
-package com.example.sincredtest
+package com.example.sincredtest.ui.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +7,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.example.sincredtest.R
 import com.example.sincredtest.data.di.SincredModule
 import com.example.sincredtest.databinding.ActivityMainBinding
 import org.koin.core.context.loadKoinModules

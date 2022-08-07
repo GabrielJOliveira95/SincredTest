@@ -1,9 +1,10 @@
-package com.example.sincredtest.ui
+package com.example.sincredtest.ui.main
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.sincredtest.data.repository.SincredRepository
+import com.example.sincredtest.data.request.SincredCheckInRequest
 import com.example.sincredtest.ui.sealedClass.SincredSealedClassResponse
 import kotlinx.coroutines.launch
 
@@ -21,6 +22,18 @@ class SincredViewModel(
                 mSealedClassResponse.value = SincredSealedClassResponse.OnSuccess(response)
             } catch (e: Exception) {
                 mSealedClassResponse.value = SincredSealedClassResponse.OnFailure(e)
+            }
+        }
+    }
+
+    fun checkIn(request: SincredCheckInRequest) {
+
+        viewModelScope.launch {
+            try {
+              sincredRepository.checkInt(request)
+
+            } catch (e: Exception) {
+
             }
         }
     }

@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/sincredEvents"
-        android:name="com.example.sincredtest.ui.SincredEvents"
+        android:name="com.example.sincredtest.ui.main.SincredEvents"
         android:label="Eventos"
         tools:layout="@layout/fragment_sincred_events" >
         <action

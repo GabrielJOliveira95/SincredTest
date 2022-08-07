@@ -1,4 +1,4 @@
-package com.example.sincredtest.ui
+package com.example.sincredtest.ui.main
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -44,11 +44,14 @@ class SincredEvents : Fragment() {
         viewModel.sealedClassResponse.observe(viewLifecycleOwner) {
             when (it) {
                 is SincredSealedClassResponse.OnSuccess -> {
+                    showContent()
                     bindEventsList(it)
                 }
                 is SincredSealedClassResponse.OnFailure -> {
-
+                    showContent()
+                    binding.progressAction.visibility = View.GONE
                 }
+                else -> Unit
             }
         }
     }
@@ -71,5 +74,10 @@ class SincredEvents : Fragment() {
                 navigateToId = R.id.action_sincredEvents_to_sincredEventDetailFragment,
                 bundle = bundle
             )
+    }
+
+    private fun showContent() {
+        binding.rvEvents.visibility = View.VISIBLE
+        binding.progressAction.visibility = View.GONE
     }
 }

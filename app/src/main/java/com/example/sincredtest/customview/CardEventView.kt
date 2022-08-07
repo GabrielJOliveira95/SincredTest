@@ -4,8 +4,9 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.view.isVisible
+import androidx.core.view.postOnAnimationDelayed
 import com.example.sincredtest.R
-import com.example.sincredtest.data.response.EventsResponse
 import com.example.sincredtest.data.response.EventsResponseItem
 import com.example.sincredtest.databinding.CardEventsItemBinding
 import com.squareup.picasso.Picasso
@@ -33,6 +34,9 @@ class CardEventView @JvmOverloads constructor(
         binding.tvDecription.text = eventResponseModel.description
         bindImage(eventResponseModel.image)
         setOnItemClickListener(onItemClicked, eventResponseModel)
+
+
+        test()
     }
 
     private fun setOnItemClickListener(
@@ -52,10 +56,23 @@ class CardEventView @JvmOverloads constructor(
             .into(binding.ivEventLogo)
     }
 
+    private fun test() {
+        binding.tvLink.setOnClickListener {
+            if (binding.container.isVisible) {
+                binding.container.visibility = GONE
+                binding.tvLink.setImageResource(R.drawable.ic_baseline_keyboard_arrow_down_24)
+            } else {
+                binding.container.visibility = VISIBLE
+                binding.tvLink.setImageResource(R.drawable.ic_baseline_keyboard_arrow_up_24)
+            }
+        }
+    }
+
     private fun setLayout(attrs: AttributeSet?) {
         attrs?.let { attributeSet ->
             val attributes = context.obtainStyledAttributes(attributeSet, R.styleable.CardEventView)
-            val buttonLinkResId = attributes.getResourceId(R.styleable.CardEventView_link_button_title, 0)
+            val buttonLinkResId =
+                attributes.getResourceId(R.styleable.CardEventView_link_button_title, 0)
 
             if (buttonLinkResId != 0) {
                 linkButtonText = context.getString(buttonLinkResId)
