@@ -13,11 +13,12 @@ import com.example.sincredtest.constants.CONSTANTS.EVENT_DETAIL_BUNDLE
 import com.example.sincredtest.data.response.EventsResponseItem
 import com.example.sincredtest.databinding.FragmentSincredEventsBinding
 import com.example.sincredtest.extension.slideWithEffect
+import com.example.sincredtest.ui.BaseFragment
 import com.example.sincredtest.ui.adapter.SincredEventsAdapter
 import com.example.sincredtest.ui.sealedClass.SincredSealedClassResponse
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class SincredEvents : Fragment() {
+class SincredEvents : BaseFragment() {
     private val viewModel: SincredViewModel by viewModel()
 
     lateinit var binding: FragmentSincredEventsBinding
@@ -35,12 +36,7 @@ class SincredEvents : Fragment() {
         return binding.root
     }
 
-    override fun onResume() {
-        super.onResume()
-        handleObservables()
-    }
-
-    private fun handleObservables() {
+    override fun handleObservers() {
         viewModel.sealedClassResponse.observe(viewLifecycleOwner) {
             when (it) {
                 is SincredSealedClassResponse.OnSuccess -> {
@@ -49,7 +45,12 @@ class SincredEvents : Fragment() {
                 }
                 is SincredSealedClassResponse.OnFailure -> {
                     showContent()
+                    initDialog(it.exception) { viewModel.loadEvents() }
                     binding.progressAction.visibility = View.GONE
+                }
+                is SincredSealedClassResponse.NoInternet -> {
+                    showContent()
+                    initDialog(getString(R.string.no_internet)) {  viewModel.loadEvents() }
                 }
                 else -> Unit
             }

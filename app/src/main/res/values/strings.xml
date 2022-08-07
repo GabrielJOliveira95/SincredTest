@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">SincredTest</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ops">OPS!</string>
+    <string name="ok">OK</string>
+    <string name="no_internet">Parece que você está sem internet. Tente novamente</string>
+    <string name="empty_field">Digite todos os campos</string>
 </resources>
