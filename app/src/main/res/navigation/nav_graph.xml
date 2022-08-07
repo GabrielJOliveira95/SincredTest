@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    android:label="Eventos"
+    app:startDestination="@id/sincredEvents">
+
+    <fragment
+        android:id="@+id/sincredEvents"
+        android:name="com.example.sincredtest.ui.SincredEvents"
+        android:label="Eventos"
+        tools:layout="@layout/fragment_sincred_events" >
+        <action
+            android:id="@+id/action_sincredEvents_to_sincredEventDetailFragment"
+            app:destination="@id/sincredEventDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sincredEventDetailFragment"
+        android:name="com.example.sincredtest.ui.eventDetail.SincredEventDetailFragment"
+        android:label="fragment_sincred_event_detail"
+        tools:layout="@layout/fragment_sincred_event_detail" />
+</navigation>

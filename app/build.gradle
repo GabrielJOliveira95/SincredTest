@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    compileSdk 31
 
     defaultConfig {
         applicationId "com.example.sincredtest"
         minSdk 19
-        targetSdk 32
+        targetSdk 31
         versionCode 1
         versionName "1.0"
 
@@ -36,14 +36,47 @@ android {
 }
 
 dependencies {
-
     implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.4.2'
-    implementation 'com.google.android.material:material:1.6.1'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    testImplementation 'junit:junit:4.13.2'
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    // Espresso
+    def espresso_version = "3.4.0"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
+
+    // Espresso core
+    def espresso_version_core = "1.4.0"
+    androidTestImplementation "androidx.test:core:$espresso_version_core"
+
+    // AndroidJUnitRunner and JUnit Rules
+    def junit_version = "1.4.0"
+    androidTestImplementation "androidx.test:runner:$junit_version"
+    androidTestImplementation "androidx.test:rules:$junit_version"
+
+    //Robolectric environment
+    def robolectric_version = "1.4.0"
+    testImplementation "androidx.test:core:$robolectric_version"
+
+    //Mockito framework
+    def mockito_version = "3.3.3"
+    testImplementation "org.mockito:mockito-core:$mockito_version"
+
+    testImplementation "io.mockk:mockk:1.10.0"
+
+    // Test arch core
+    def arch_core_version = "1.1.1"
+    testImplementation "android.arch.core:core-testing:$arch_core_version"
+
+    // Espresso dependencies
+    def espresso_dependencies_version = "3.4.0"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_dependencies_version"
+    androidTestImplementation "androidx.test.espresso:espresso-contrib:$espresso_dependencies_version"
+    androidTestImplementation "androidx.test.espresso:espresso-intents:$espresso_dependencies_version"
 
     // Lifecycle
     def lifecycleVersion = "2.4.0"
@@ -66,7 +99,7 @@ dependencies {
 
     // Koin Test features
     testImplementation "io.insert-koin:koin-test:$koin_version"
-    
+
     //PICASSO
     def picasso_version = "2.8"
     implementation "com.squareup.picasso:picasso:$picasso_version"
