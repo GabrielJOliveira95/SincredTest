@@ -9,6 +9,6 @@ class SincredDataSourceImpl(private val api: SincredService) : SincredDataSource
 
     override suspend fun getEvents(): EventsResponse = api.getEvents()
 
-    override suspend fun checkInt(request: SincredCheckInRequest): Any =
+    override suspend fun checkIn(request: SincredCheckInRequest): Any =
         api.checkIn(request)
 }

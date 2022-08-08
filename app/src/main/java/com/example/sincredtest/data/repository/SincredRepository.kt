@@ -7,5 +7,5 @@ interface SincredRepository {
 
     suspend fun getEvents(): EventsResponse
 
-    suspend fun checkInt(request: SincredCheckInRequest): Any
+    suspend fun checkIn(request: SincredCheckInRequest): Any
 }

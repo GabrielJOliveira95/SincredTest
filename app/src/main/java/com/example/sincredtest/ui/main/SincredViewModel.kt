@@ -30,7 +30,7 @@ class SincredViewModel(
     fun checkIn(request: SincredCheckInRequest) {
         viewModelScope.launch {
             try {
-              sincredRepository.checkInt(request)
+              sincredRepository.checkIn(request)
                 mSealedClassResponse.value = SincredSealedClassResponse.CheckSuccessIn
             } catch (e: Exception) {
                 setError(e)

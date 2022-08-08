@@ -8,6 +8,6 @@ class SincredRepositoryImpl(private val dataSource: SincredDataSource) : Sincred
 
     override suspend fun getEvents(): EventsResponse = dataSource.getEvents()
 
-    override suspend fun checkInt(request: SincredCheckInRequest): Any =
-        dataSource.checkInt(request)
+    override suspend fun checkIn(request: SincredCheckInRequest): Any =
+        dataSource.checkIn(request)
 }
