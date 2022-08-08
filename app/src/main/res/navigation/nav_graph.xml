@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    android:label="Eventos"
+    android:label="@string/label_fragment_event"
     app:startDestination="@id/sincredEvents">
 
     <fragment
         android:id="@+id/sincredEvents"
         android:name="com.example.sincredtest.ui.main.SincredEvents"
-        android:label="Eventos"
+        android:label="@string/label_fragment_event"
         tools:layout="@layout/fragment_sincred_events" >
         <action
             android:id="@+id/action_sincredEvents_to_sincredEventDetailFragment"
@@ -18,6 +18,6 @@
     <fragment
         android:id="@+id/sincredEventDetailFragment"
         android:name="com.example.sincredtest.ui.eventDetail.SincredEventDetailFragment"
-        android:label="fragment_sincred_event_detail"
+        android:label="@string/label_fragment_check_in"
         tools:layout="@layout/fragment_sincred_event_detail" />
 </navigation>

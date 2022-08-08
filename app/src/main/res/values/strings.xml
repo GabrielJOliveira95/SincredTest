@@ -4,8 +4,10 @@
     <string name="ok">OK</string>
     <string name="no_internet">Parece que você está sem internet. Tente novamente</string>
     <string name="empty_field">Digite todos os campos</string>
-    <string name="check_in_hint">CheckIn</string>
+    <string name="check_in_hint">Check In</string>
     <string name="btn_check_in">Fazer Check In</string>
     <string name="hint_email">Email</string>
     <string name="hint_name">Nome</string>
+    <string name="label_fragment_event">Eventos</string>
+    <string name="label_fragment_check_in">Check In</string>
 </resources>

@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.eventDetail.SincredEventDetailFragment">
 
-
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/ti_name"
         android:layout_width="0dp"
@@ -44,11 +43,13 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
+        android:background="@drawable/buttom_background"
         android:id="@+id/btn_do_check_in"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dimens_16"
         android:layout_marginEnd="@dimen/dimens_16"
+        android:textColor="@color/white"
         android:layout_marginBottom="@dimen/dimens_16"
         android:text="@string/btn_check_in"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -56,8 +57,8 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        style="@style/TitleStile"
         android:id="@+id/tv_event_check_in"
+        style="@style/TitleStile"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dimens_16"
