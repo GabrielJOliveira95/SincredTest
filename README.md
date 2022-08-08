@@ -7,7 +7,7 @@ Tecnologias usadas:
 - Coroutines para fazer chamadas a APi
 - Glide para converter images
 - Criado componente customizado 
-
+- Koin para fazer a injeção de dependência
 - Correção de erro da api que retorna erros em algumas imagens
 - Tratamento de exception 
 
