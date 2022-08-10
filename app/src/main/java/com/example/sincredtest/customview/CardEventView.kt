@@ -16,8 +16,6 @@ class CardEventView @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : ConstraintLayout(context, attrs, defStyleAttr) {
 
-    private val title: String? = null
-    private val description: String? = null
     private var linkButtonText: String? = null
     private val binding = CardEventsItemBinding.inflate(LayoutInflater.from(context), this, true)
 
@@ -33,8 +31,6 @@ class CardEventView @JvmOverloads constructor(
         binding.tvDecription.text = eventResponseModel.description
         bindImage(eventResponseModel.image)
         setOnItemClickListener(onItemClicked, eventResponseModel)
-
-
         bindExpandableIcon()
     }
 
